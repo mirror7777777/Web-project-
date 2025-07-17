@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require ('path')
 const app = express();
-const Port = 4600;
+const Port = 6700;
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -58,4 +58,12 @@ app.post('/datapage', (req, res)=>{
   const item = req.body;
   const {firstName, lastName, email} = item;
   res.render('datapage' , {firstName, lastName, email});
-})
+});
+
+app.get('/services', (req , res)=>{
+res.render('services')
+});
+
+app.get('/newsletter', (req , res)=>{
+res.render('newsletter')
+});
