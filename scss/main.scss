@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+$hero-mb: 60px;
+
+// Footer Styles
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+// Table Header Styles
+.tablehead {
+  display: sticky;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+// Body Padding
+body {
+  padding-bottom: 500px;
+}
+
+// Banner Image Styles
+.banners {
+  img {
+    min-width: 100%;
+    width: 200px;
+  }
+}
+
+// Product Card Styles
+.product-card,
+.productcard {
+  img {
+    min-width: 50%;
+    width: 200px;
+  }
+}
+
+.hero-custom {
+    margin-bottom: 60px;
+}

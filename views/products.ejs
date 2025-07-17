@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyberpunk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact page</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="min-h-screen bg-base-100">
+    <%- include('partial/header' , { page: '/products'})-%>
+
+    <div class="hero min-h-96 bg-gradient-to-r from-secondary to-accent" style="background-image: url('Asseta/prod2.jpg'); background-blend-mode: overlay;">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+          <div class="max-w-md">
+            <h1 class="mb-5 text-5xl font-bold">Our Product</h1>
+            <p class="mb-5">Deivering quality product that adds value to your workflow</p>
+            <button class="btn btn-primary">Explore</button>
+          </div>
+        </div>
+    </div>
+
+    <div class="flex justify-center mt-8">
+        <div class="stats stats-horizontal shadow">
+          <div class="stat">
+            <div class="stat-title">User Globally</div>
+            <div class="stat-value text-primary">50M</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Countries</div>
+            <div class="stat-value text-secondary">20+</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Awards</div>
+            <div class="stat-value text-accent">15+</div>
+          </div>
+        </div>
+      </div>
+    
+      <main class="container mx-auto p-6">
+        <section class="py-16">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold text-primary mb-4">Our Featured Products</h2>
+              <div class="badge badge-secondary badge-lg">Premium Quality</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Brand Strategy Card -->
+                <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
+                  <figure class="px-10 pt-10">
+                    <img src="Asseta/lms.jpeg" alt="Brand Strategy" class="rounded-xl h-48 w-full object-cover"/>
+                  </figure>
+                  <div class="card-body">
+                    <div class="flex items-center gap-2 mb-2">
+                      <div class="badge badge-primary">Enterprise</div>
+                      <div class="badge badge-outline">Learning</div>
+                    </div>
+                    <h3 class="card-title text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                        Learning Management System
+                      </h3>
+                      <p class="text-base-content/80 leading-relaxed">
+                        Learning Management System (LMS) is a software application designed to manage, deliver, 
+                        and track educational courses and training programs. It provides a centralized platform for content creation, 
+                        student enrollment, progress monitoring, assessments, and communication, 
+                        making learning more efficient and accessible for individuals and organizations
+                      </p>
+                      <div class="card-actions justify-end mt-4">
+                        <div class="rating rating-sm">
+                          <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
+                          <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
+                          <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
+                          <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
+                          <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" checked />
+                        </div>
+                        <button class="btn btn-primary">
+                          Learn More
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <!-- Visual Identity Card -->
+                  <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
+                    <figure class="px-10 pt-10">
+                      <img src="Asseta/cm2.png" alt="Visual Identity" class="rounded-xl h-48 w-full object-cover"/>
+                    </figure>
+                    <div class="card-body">
+                      <div class="flex items-center gap-2 mb-2">
+                        <div class="badge badge-secondary">Customer</div>
+                        <div class="badge badge-outline">Enterpise</div>
+                      </div>
+                      <h3 class="card-title text-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        Customer Relationship Management
+                      </h3>
+                      <p class="text-base-content/80 leading-relaxed">
+                        A Customer Relationship Management (CRM) system is a technology solution that helps businesses 
+                        manage and analyze customer interactions and data throughout the customer lifecycle. 
+                        Its primary purpose is to improve customer service relationships and assist in customer retention and drive sales growth by centralizing customer information, 
+                        automating sales and marketing processes, and providing insights into customer behavior.
+                      </p>
+                      <div class="card-actions justify-end mt-4">
+                        <div class="rating rating-sm">
+                          <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                          <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                          <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                          <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                          <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                        </div>
+                        <button class="btn btn-secondary">
+                          Learn More
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </section>
+      </main>
+      <%- include('partial/footer' , { page: '/products'})-%>
+
+</body>    
+</html>
