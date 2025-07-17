@@ -3,66 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Page</title>
+    <title>Services Page</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="min-h-screen bg-base-100">
     <%- include('partial/header' , { page: '/service'})-%>
     
-    <header  class="banners">
-    <img src="Asseta/desk.jpg" alt="banner">
-    </header>
+    <!-- Hero Banner -->
+    <div class="hero min-h-96 bg-gradient-to-r from-secondary to-accent" style="background-image: url('Asseta/desk.jpg'); background-blend-mode: overlay;">
+      <div class="hero-overlay bg-opacity-60"></div>
+      <div class="hero-content text-center text-neutral-content">
+        <div class="max-w-md">
+          <h1 class="mb-5 text-5xl font-bold">Our Services</h1>
+          <p class="mb-5">Transforming brands through creative design and strategic thinking</p>
+          <button class="btn btn-primary">Get Started</button>
+        </div>
+      </div>
+    </div>
 
-  <main>
-    <section class="introsection">
-      <h1>What We Do</h1>
-      <p>Discover our products and the impact they make. Whether you're looking for innovation, sustainability, or top-tier performance—we've got you covered.</p>
-    </section>
-
-    <section class="producthighlights">
-      <h2>Our Featured Products and services</h2>
-      <div class="productgrid">
-        <article class="productcard">
-          <img src="Asseta/wireframe.jpg" alt="Product 1">
-          <h3>Brand strategy</h3>
-          <p>Ceating a unique brand website to help businesses by integrating brand's core values
-            is what we do.For us, identity means clarity. Every visual touchpoint, from layouts to 
-            language, is designed to reflect purpose and evoke connection. By grounding identity in
-             authenticity and intuition, we build brands that feel human, memorable, and unmistakably stargaziin brand.
+    <main class="container mx-auto p-6">
+      <!-- Introduction Section -->
+      <section class="text-center py-16">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-4xl font-bold text-primary mb-6">What We Do</h1>
+          <p class="text-xl text-base-content/80 leading-relaxed">
+            Discover our products and the impact they make. Whether you're looking for innovation, 
+            sustainability, or top-tier performance—we've got you covered.
           </p>
-          <a href="#">Learn More</a>
-        </article>
+          <div class="flex justify-center mt-8">
+            <div class="stats stats-horizontal shadow">
+              <div class="stat">
+                <div class="stat-title">Happy Clients</div>
+                <div class="stat-value text-primary">500+</div>
+              </div>
+              <div class="stat">
+                <div class="stat-title">Projects</div>
+                <div class="stat-value text-secondary">1,200+</div>
+              </div>
+              <div class="stat">
+                <div class="stat-title">Awards</div>
+                <div class="stat-value text-accent">25+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <article class="product-card">
-          <img src="Asseta/tablet.jpg" alt="Product 2">
-          <h3>Visual identity</h3>
-          <p>At stargaziin Creative, our logo design process begins with discovery.
-             We dive into a brand’s history, audience, values, and ambitions to 
-             uncover what makes it unique. From there, we craft visual identities
-              that are simple yet expressive, intentional yet adaptable.
-            </p>
-          <a href="#">Learn More</a>
-        </article>
+      <!-- Services Section -->
+      <section class="py-16">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-primary mb-4">Our Featured Products and Services</h2>
+          <div class="badge badge-secondary badge-lg">Premium Quality</div>
+        </div>
         
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <!-- Brand Strategy Card -->
+          <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
+            <figure class="px-10 pt-10">
+              <img src="Asseta/wireframe.jpg" alt="Brand Strategy" class="rounded-xl h-48 w-full object-cover"/>
+            </figure>
+            <div class="card-body">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-primary">Strategy</div>
+                <div class="badge badge-outline">Branding</div>
+              </div>
+              <h3 class="card-title text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+                Brand Strategy
+              </h3>
+              <p class="text-base-content/80 leading-relaxed">
+                Creating a unique brand website to help businesses by integrating brand's core values 
+                is what we do. For us, identity means clarity. Every visual touchpoint, from layouts to 
+                language, is designed to reflect purpose and evoke connection. By grounding identity in
+                authenticity and intuition, we build brands that feel human, memorable, and unmistakably stargaziin brand.
+              </p>
+              <div class="card-actions justify-end mt-4">
+                <div class="rating rating-sm">
+                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
+                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
+                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
+                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
+                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" checked />
+                </div>
+                <button class="btn btn-primary">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
 
-        <!-- Add more product cards as needed -->
+          <!-- Visual Identity Card -->
+          <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
+            <figure class="px-10 pt-10">
+              <img src="Asseta/tablet.jpg" alt="Visual Identity" class="rounded-xl h-48 w-full object-cover"/>
+            </figure>
+            <div class="card-body">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="badge badge-secondary">Design</div>
+                <div class="badge badge-outline">Visual</div>
+              </div>
+              <h3 class="card-title text-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                Visual Identity
+              </h3>
+              <p class="text-base-content/80 leading-relaxed">
+                At stargaziin Creative, our logo design process begins with discovery. 
+                We dive into a brand's history, audience, values, and ambitions to 
+                uncover what makes it unique. From there, we craft visual identities
+                that are simple yet expressive, intentional yet adaptable.
+              </p>
+              <div class="card-actions justify-end mt-4">
+                <div class="rating rating-sm">
+                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                </div>
+                <button class="btn btn-secondary">
+                  Learn More
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action Section -->
+      <section class="py-16">
+        <div class="card bg-gradient-to-r from-primary to-secondary text-primary-content shadow-2xl">
+          <div class="card-body text-center">
+            <h2 class="card-title text-3xl justify-center mb-4">Ready to Make a Move?</h2>
+            <p class="text-xl mb-6 text-primary-content/90">
+              Let's help you find the right identity for your business.
+            </p>
+            <div class="card-actions justify-center">
+              <a href="/contact" class="btn btn-accent btn-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Contact Us
+              </a>
+              <button class="btn btn-outline btn-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                View Portfolio
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="bg-base-200 py-16">
+      <div class="container mx-auto p-6">
+        <div class="card bg-base-100 shadow-xl max-w-2xl mx-auto">
+          <div class="card-body text-center">
+            <div class="avatar placeholder mb-4">
+              <div class="bg-info text-info-content rounded-full w-16">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+            </div>
+            <h2 class="card-title text-2xl justify-center text-info">Subscribe to Our Newsletter</h2>
+            <p class="text-base-content/80 mb-6">
+              Get the latest updates, insights, and offers delivered straight to your inbox.
+            </p>
+            <div class="card-actions justify-center">
+              <a href="/newsletter" class="btn btn-info btn-wide">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+                Subscribe Now
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
-    <section class="cta">
-      <h2>Ready to Make a Move?</h2>
-      <p>Let’s help you find the right identity for your business.</p>
-      <a href="contact" class="cta-button">Contact Us</a>
-    </section>
-  </main>
-
-  <section class="newsletter-section">
-    <h2>Subscribe to Our Newsletter</h2>
-    <p>Get the latest updates, insights, and offers delivered straight to your inbox.</p>
-    <a href="/newsletter">link to newsletter page</a>
-  </section>
-
-
 
     <%- include('partial/footer' , { page: '/service'})-%>
 </body>
