@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>About Page</title>
+    <link rel="stylesheet" href="css\main.css">
+     <%- include('partial/header' , { page: '/about'})-%>
+</head>
+<body>
+  <h1>About Us Page</h1>
+  <h1><%= Description.description %></h1>
+<div class="sm:flex items-center max-w-screen-xl">
+    <div class="sm:w-1/2 p-10">
+        <div class="image object-center text-center">
+            <img src="https://i.imgur.com/WbQnbas.png">
+        </div>
+    </div>
+    <div class="sm:w-1/2 p-5">
+        <div class="text">
+            <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">About us</span>
+            <h2 class="my-4 font-bold text-3xl  sm:text-4xl ">About <span class="text-indigo-600">Our Company</span>
+            </h2>
+            <p class="text-gray-700">
+               At Stargaziin Creative, design is rooted in legacy.We create clean, intentional designs and build seamless digital experiences that speak with clarity. From brand identities to responsive websites, our work blends creativity with code to craft human-centered, emotionally intelligent solutions.
+               Whether it’s a logo that feels lived-in or a layout that reads like a narrative, 
+              our goal is always the same: to help brands show up with confidence, character, 
+              and usability that just makes sense.
+            </p>
+        </div>
+    </div>
+</div>
+
+  <footer>
+    <%- include('partial/footer' , { page: '/about'})-%>
+  </footer>
+</body>
+</html>
