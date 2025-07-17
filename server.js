@@ -67,3 +67,7 @@ res.render('services')
 app.get('/newsletter', (req , res)=>{
 res.render('newsletter')
 });
+
+app.get('/service', (req , res)=>{
+  res.render('services')
+});
