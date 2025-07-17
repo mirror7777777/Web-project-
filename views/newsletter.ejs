@@ -3,82 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <title>Newsletter Subscription</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="min-h-screen bg-base-100">
     <%- include('partial/header' , {page : '/newsletter'} )-%>
     
-    <div class="hero min-h-96 bg-base-200">
+    <!-- Hero Section with Newsletter Theme -->
+    <div class="hero min-h-96 bg-gradient-to-br from-info to-success">
       <div class="hero-content text-center">
         <div class="max-w-md">
-          <h1 class="text-5xl font-bold text-primary">News letter page</h1>
-          <p class="py-6 text-base-content">Fill in the form below to subscribe</p>
+          <div class="avatar placeholder mb-6">
+            <div class="bg-info-content text-info rounded-full w-20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+          </div>
+          <h1 class="text-5xl font-bold text-info-content">Stay Connected</h1>
+          <p class="py-6 text-info-content/90">Join our newsletter and be the first to know about our latest updates, exclusive content, and special offers.</p>
+          <div class="badge badge-accent badge-lg">Weekly Updates</div>
         </div>
       </div>
     </div>
 
-    <div class="container mx-auto p-6">
-      <div class="card w-full max-w-2xl mx-auto bg-base-100 shadow-xl">
+    <div class="container mx-auto p-6 -mt-20">
+      <!-- Main Newsletter Subscription Card -->
+      <div class="card w-full max-w-4xl mx-auto bg-base-100 shadow-2xl">
         <div class="card-body">
-          <h2 class="card-title text-2xl mb-4 text-primary">Personal Information</h2>
-          <p class="text-base-content/70 mb-6">Use a permanent address where you can receive mail.</p>
-          
-          <form action="datapage" method="post" class="space-y-4">
-            <div class="form-control w-full">
-              <label class="label" for="first-name">
-                <span class="label-text font-medium">First name</span>
-              </label>
-              <input 
-                type="text" 
-                name="firstName" 
-                id="first-name" 
-                autocomplete="given-name" 
-                class="input input-bordered w-full" 
-                placeholder="Enter your first name"
-                required
-              />
-            </div>
-
-            <div class="form-control w-full">
-              <label class="label" for="last-name">
-                <span class="label-text font-medium">Last name</span>
-              </label>
-              <input 
-                type="text" 
-                name="lastName" 
-                id="last-name" 
-                autocomplete="family-name" 
-                class="input input-bordered w-full" 
-                placeholder="Enter your last name"
-                required
-              />
-            </div>
-
-            <div class="form-control w-full">
-              <label class="label" for="email">
-                <span class="label-text font-medium">Email address</span>
-              </label>
-              <input 
-                id="email" 
-                name="email" 
-                type="email" 
-                autocomplete="email" 
-                class="input input-bordered w-full" 
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-
-            <div class="card-actions justify-end mt-6">
-              <button type="submit" class="btn btn-primary btn-wide">
-                Subscribe
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          <!-- Newsletter Benefits -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h2 class="card-title text-3xl mb-6 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
-              </button>
+                Newsletter Subscription
+              </h2>
+              <p class="text-base-content/80 mb-6 leading-relaxed">
+                Get exclusive access to our premium content, industry insights, and special offers delivered directly to your inbox.
+              </p>
+              
+              <!-- Benefits List -->
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <div class="badge badge-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span class="text-base-content">Weekly industry updates and trends</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="badge badge-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span class="text-base-content">Exclusive discounts and early access</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="badge badge-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span class="text-base-content">Behind-the-scenes content</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="badge badge-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span class="text-base-content">No spam, unsubscribe anytime</span>
+                </div>
+              </div>
+
+              <!-- Newsletter Stats -->
+              <div class="stats stats-vertical shadow mt-6">
+                <div class="stat">
+                  <div class="stat-figure text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-8 h-8 stroke-current" fill="none" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                  </div>
+                  <div class="stat-title">Subscribers</div>
+                  <div class="stat-value text-primary">15,000+</div>
+                  <div class="stat-desc">Growing daily</div>
+                </div>
+              </div>
             </div>
-          </form>
+
+            <!-- Subscription Form -->
+            <div class="card bg-base-200 shadow-lg">
+              <div class="card-body">
+                <h3 class="card-title text-secondary mb-4">Subscribe Now</h3>
+                
+                <form action="datapage" method="post" class="space-y-4">
+                  <div class="form-control w-full">
+                    <label class="label" for="first-name">
+                      <span class="label-text font-medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        First name
+                      </span>
+                    </label>
+                    <input 
+                      type="text" 
+                      name="firstName" 
+                      id="first-name" 
+                      autocomplete="given-name" 
+                      class="input input-bordered input-secondary w-full" 
+                      placeholder="Enter your first name"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-control w-full">
+                    <label class="label" for="last-name">
+                      <span class="label-text font-medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        Last name
+                      </span>
+                    </label>
+                    <input 
+                      type="text" 
+                      name="lastName" 
+                      id="last-name" 
+                      autocomplete="family-name" 
+                      class="input input-bordered input-secondary w-full" 
+                      placeholder="Enter your last name"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-control w-full">
+                    <label class="label" for="email">
+                      <span class="label-text font-medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        Email address
+                      </span>
+                    </label>
+                    <input 
+                      id="email" 
+                      name="email" 
+                      type="email" 
+                      autocomplete="email" 
+                      class="input input-bordered input-secondary w-full" 
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+
+                  <!-- Newsletter Preferences -->
+                  <div class="form-control">
+                    <label class="label cursor-pointer">
+                      <span class="label-text">Weekly newsletter</span>
+                      <input type="checkbox" checked="checked" class="checkbox checkbox-secondary" />
+                    </label>
+                  </div>
+                  <div class="form-control">
+                    <label class="label cursor-pointer">
+                      <span class="label-text">Product updates</span>
+                      <input type="checkbox" checked="checked" class="checkbox checkbox-secondary" />
+                    </label>
+                  </div>
+                  <div class="form-control">
+                    <label class="label cursor-pointer">
+                      <span class="label-text">Special offers</span>
+                      <input type="checkbox" class="checkbox checkbox-secondary" />
+                    </label>
+                  </div>
+
+                  <div class="card-actions justify-center mt-6">
+                    <button type="submit" class="btn btn-secondary btn-wide">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                      </svg>
+                      Subscribe Now
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter Preview Section -->
+      <div class="card bg-base-100 shadow-xl mt-8 max-w-4xl mx-auto">
+        <div class="card-body">
+          <h3 class="card-title text-accent mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            Newsletter Preview
+          </h3>
+          
+          <div class="mockup-browser border bg-base-300">
+            <div class="mockup-browser-toolbar">
+              <div class="input">Latest Newsletter - Stargaziin Creative</div>
+            </div>
+            <div class="flex justify-center px-4 py-16 bg-base-200">
+              <div class="max-w-md">
+                <h4 class="text-xl font-bold mb-4">This Week in Design</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center gap-3">
+                    <div class="badge badge-primary">New</div>
+                    <span class="text-sm">Latest design trends for 2025</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="badge badge-secondary">Tips</div>
+                    <span class="text-sm">Brand identity best practices</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="badge badge-accent">Case Study</div>
+                    <span class="text-sm">Client success stories</span>
+                  </div>
+                </div>
+                <button class="btn btn-outline btn-sm mt-4">Read Full Newsletter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials Section -->
+      <div class="card bg-gradient-to-r from-accent to-secondary text-accent-content shadow-xl mt-8 max-w-4xl mx-auto">
+        <div class="card-body">
+          <h3 class="card-title text-2xl justify-center mb-6">What Our Subscribers Say</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card bg-accent-content text-accent shadow-lg">
+              <div class="card-body items-center text-center">
+                <div class="avatar placeholder mb-2">
+                  <div class="bg-accent text-accent-content rounded-full w-12">
+                    <span class="text-xl">JS</span>
+                  </div>
+                </div>
+                <p class="text-sm italic">"Amazing content every week. Really helps me stay updated with design trends!"</p>
+                <div class="card-actions">
+                  <div class="rating rating-sm">
+                    <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" checked />
+                  </div>
+                </div>
+                <span class="text-xs">- Jane Smith</span>
+              </div>
+            </div>
+
+            <div class="card bg-accent-content text-accent shadow-lg">
+              <div class="card-body items-center text-center">
+                <div class="avatar placeholder mb-2">
+                  <div class="bg-accent text-accent-content rounded-full w-12">
+                    <span class="text-xl">MD</span>
+                  </div>
+                </div>
+                <p class="text-sm italic">"The industry insights are invaluable for my business. Highly recommended!"</p>
+                <div class="card-actions">
+                  <div class="rating rating-sm">
+                    <input type="radio" name="rating-4" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-4" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-4" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-4" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-4" class="mask mask-star-2 bg-orange-400" checked />
+                  </div>
+                </div>
+                <span class="text-xs">- Mike Davis</span>
+              </div>
+            </div>
+
+            <div class="card bg-accent-content text-accent shadow-lg">
+              <div class="card-body items-center text-center">
+                <div class="avatar placeholder mb-2">
+                  <div class="bg-accent text-accent-content rounded-full w-12">
+                    <span class="text-xl">AB</span>
+                  </div>
+                </div>
+                <p class="text-sm italic">"Never miss an issue! The content quality is consistently excellent."</p>
+                <div class="card-actions">
+                  <div class="rating rating-sm">
+                    <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-5" class="mask mask-star-2 bg-orange-400" checked />
+                  </div>
+                </div>
+                <span class="text-xs">- Anna Brown</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
