@@ -2876,6 +2876,10 @@ html {
   margin-top: 2rem;
 }
 
+.-mb-20 {
+  margin-bottom: -5rem;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -3463,13 +3467,15 @@ html {
   transition-duration: 300ms;
 }
 
-.footer{
+// Footer Styles
+.footer {
   position: fixed;
   left: 0;
   bottom: 0;
 }
 
-.tablehead{
+// Table Header Styles
+.tablehead {
   display: sticky;
   flex-direction: column;
   align-items: center;
@@ -3477,23 +3483,26 @@ html {
   gap: 40px;
 }
 
-body{
+// Body Padding
+body {
   padding-bottom: 500px;
 }
 
-.banners img{
-  min-width: 100%;
-  width: 200px;
+// Banner Image Styles
+.banners {
+  img {
+    min-width: 100%;
+    width: 200px;
+  }
 }
 
-.product-card img{
-  min-width: 50%;
-  width: 200px;
-}
-
-.productcard img{
-  min-width: 50%;
-  width: 200px;
+// Product Card Styles
+.product-card,
+.productcard {
+  img {
+    min-width: 50%;
+    width: 200px;
+  }
 }
 
 @media (min-width: 1024px) {
