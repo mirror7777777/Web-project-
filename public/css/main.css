@@ -2929,11 +2929,30 @@ html {
 }
 
 .tablehead{
-  display: flex;
+  display: sticky;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 40px;
+}
+
+body{
+  padding-bottom: 500px;
+}
+
+.banners img{
+  min-width: 100%;
+  width: 200px;
+}
+
+.product-card img{
+  min-width: 50%;
+  width: 200px;
+}
+
+.productcard img{
+  min-width: 50%;
+  width: 200px;
 }
 
 @media (min-width: 1024px) {
@@ -2991,4 +3010,3 @@ html {
     line-height: 2.5rem;
   }
 }
-
