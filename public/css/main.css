@@ -2820,6 +2820,10 @@ html {
   margin-right: auto;
 }
 
+.-mb-20 {
+  margin-bottom: -5rem;
+}
+
 .-mt-20 {
   margin-top: -5rem;
 }
@@ -2874,10 +2878,6 @@ html {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.-mb-20 {
-  margin-bottom: -5rem;
 }
 
 .inline-block {
@@ -3467,6 +3467,8 @@ html {
   transition-duration: 300ms;
 }
 
+$hero-mb: 60px;
+
 // Footer Styles
 .footer {
   position: fixed;
@@ -3503,6 +3505,10 @@ body {
     min-width: 50%;
     width: 200px;
   }
+}
+
+.hero-custom {
+  margin-bottom: 60px;
 }
 
 @media (min-width: 1024px) {
