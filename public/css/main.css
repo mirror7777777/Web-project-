@@ -3114,6 +3114,11 @@ html {
   border-radius: 0.75rem;
 }
 
+.rounded-t-none {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
 .border {
   border-width: 1px;
 }
