@@ -1,9 +1,33 @@
-<hr>
-<a href="/" <% if (currentPath === "/") {%> class = "active"<%}%>>Home</a>|
-<a href="/about" <% if (currentPath === "/about") {%> class = "active"<%}%>>About</a>|
-<a href="/contact" <% if (currentPath === "/contact") {%> class = "active"<%}%>>Contact</a>|
-<a href="/datapage" <% if (currentPath === "/datapage") {%> class = "active"<%}%>>Datapage</a>|
-<a href="/profile" <% if (currentPath === "/profile") {%> class = "active"<%}%>>profile</a>|
-<hr/>
+<div class="navbar bg-primary text-primary-content">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+        </svg>
+      </div>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a href="/" class="<% if (page === '/') {%>text-accent font-bold<%}%>">Home</a></li>
+        <li><a href="/about" class="<% if (page === '/about') {%>text-accent font-bold<%}%>">About</a></li>
+        <li><a href="/contact" class="<% if (page === '/contact') {%>text-accent font-bold<%}%>">Contact</a></li>
+        <li><a href="/profile" class="<% if (page === '/profile') {%>text-accent font-bold<%}%>">Profile</a></li>
+        <li><a href="/datapage" class="<% if (page === '/datapage') {%>text-accent font-bold<%}%>">Data Page</a></li>
+      </ul>
+    </div>
+    <a class="btn btn-ghost text-xl">Web Project</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li><a href="/" class="<% if (page === '/') {%>btn-accent<%} else {%>btn-ghost<%}%>">Home</a></li>
+      <li><a href="/about" class="<% if (page === '/about') {%>btn-accent<%} else {%>btn-ghost<%}%>">About</a></li>
+      <li><a href="/contact" class="<% if (page === '/contact') {%>btn-accent<%} else {%>btn-ghost<%}%>">Contact</a></li>
+      <li><a href="/profile" class="<% if (page === '/profile') {%>btn-accent<%} else {%>btn-ghost<%}%>">Profile</a></li>
+      <li><a href="/datapage" class="<% if (page === '/datapage') {%>btn-accent<%} else {%>btn-ghost<%}%>">Data Page</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <a class="btn btn-accent">Welcome!</a>
+  </div>
+</div>
 
 
