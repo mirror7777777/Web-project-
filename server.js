@@ -76,3 +76,7 @@ app.get('/service', (req , res)=>{
   res.render('services')
 });
 
+app.get('/lm_lms', (req , res)=>{
+  res.render('lm_lms')
+});
+
