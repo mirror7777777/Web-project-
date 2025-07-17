@@ -23,7 +23,7 @@ app.get('/about', (req , res)=>{
   const des = {
     description: 'The webpage was created for assignment 1'
   }
-res.render('About' ,{Description: des})
+res.render('about' ,{Description: des})
 });
 
 app.get('/contact', (req , res)=>{
