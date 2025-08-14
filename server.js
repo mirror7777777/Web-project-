@@ -107,30 +107,18 @@ app.delete('/services/:id', async (req, res) => {
   }
 });
 
+
+//Products
 app.get('/products', (req , res)=>{
   Product.find().exec().then((data) => {
     
       res.render('products', {data})
-      console.log(data)
+      //console.log(data)
     
   }).catch(err=> {
     console.log(err)
   })
 });
-
-
-// app.post("/addName", (req, res) => {
-
-//   const newName = new Name({
-//       lName: req.body.lName,
-//       fName: req.body.fName
-//   })
-
-//   newName.save().then(() => {
-//       console.log("successfully created a new name")
-//       res.redirect("/")
-//   })
-// })
 
 app.post('/addProduct', (req, res) => {
   const product = new Product({
@@ -148,33 +136,30 @@ app.post('/addProduct', (req, res) => {
   console.log(product)
 })
 
-// app.post('/addProduct', async (req, res) => {
-//   try {
-//     // const product = new Product(req.body);
-//     const product = new Product({
-//       name: req.body.name
-//     })
-//     req.body.name
-//     console.log(product)
-//     //await product.save();
-//     //res.status(201).json(product);
-//   } catch (err) {
-//     res.status(400).json({ error: err.message });
-//   }
-// });
-//page display for products page
+//display update page 
+app.get('/updProd', (req , res)=>{
+  console.log(req.query.id)
+  Product.findById(req.query.id).exec().then((data) => {
+    console.log(data)
+    res.render('updProd', {data})
+  });
+});
 
+app.post("/updProduct", (req, res) => {
+  //Update
+  Product.updateOne({_id: req.query.id}, {
+      $set : {
+        name: req.body.name,
+        description: req.body.description,
+        category: req.body.category,
+      }
+  }).exec().then(() => {
+      console.log("successfully updated name: " + req.body._id)
+      res.redirect("/products")
+  })
 
-// CRUD API for Product
-// READ ALL
-// app.get('/products', async (req, res) => {
-//   const products = await Product.find();
-//   res.render('products')
-//   //res.json(products);
-// });
+})
 
-
-// CREATE
 
 
 
@@ -190,16 +175,7 @@ app.get('/products/:id', async (req, res) => {
   }
 });
 
-// UPDATE
-app.put('/products/:id', async (req, res) => {
-  try {
-    const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!product) return res.status(404).json({ error: 'Not found' });
-    res.json(product);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
+
 
 // DELETE
 app.delete('/products/:id', async (req, res) => {

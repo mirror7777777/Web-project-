@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="min-h-screen bg-base-100">
-    <%- include('partial/header' , { page: '/products'})-%>
+    <%- include('partial/header' , { page: '/updProd'})-%>
 
     <div class="hero min-h-96 bg-gradient-to-r from-secondary to-accent" style="background-image: url('Asseta/prod2.jpg'); background-blend-mode: overlay;">
         <div class="hero-overlay bg-opacity-60"></div>
@@ -159,8 +159,14 @@
                           <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
                           <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" checked />
                         </div>
-                        <a role="button" class="btn btn-primary" href="/lm_lms">
-                          Learn More
+                        <a role="button" class="btn btn-primary" href="/updProd?id=<%= product._id %>">
+                          Edit
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </a>
+                        <a role="button" class="btn btn-accent" href="/updProd?id=<%= product._id %>">
+                          Delete
                           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                           </svg>

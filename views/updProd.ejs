@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyberpunk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact page</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="min-h-screen bg-base-100">
+    <%- include('partial/header' , { page: '/updProd'})-%>
+
+    <div class="hero min-h-96 bg-gradient-to-r from-secondary to-accent" style="background-image: url('Asseta/prod2.jpg'); background-blend-mode: overlay;">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+          <div class="max-w-md">
+            <h1 class="mb-5 text-5xl font-bold">Our Product</h1>
+            <p class="mb-5">Deivering quality product that adds value to your workflow</p>
+            <button class="btn btn-primary">Explore</button>
+          </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-6">
+        <div class="card w-full max-w-2xl mx-auto bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title text-2xl mb-4 text-primary">Add a product</h2>
+            <p class="text-base-content/70 mb-6">Fill this form to add a produc</p>
+            
+            <form method="post" action="/updProduct?id=<%= data._id %>"  class="space-y-4">
+              <div class="form-control w-full">
+                <label class="label" for="first-name">
+                  <span class="label-text font-medium">Product name</span>
+                </label>
+                <input 
+                  type="text" 
+                  name="name" 
+                  id="first-name" 
+                  autocomplete="given-name" 
+                  class="input input-bordered w-full" 
+                  placeholder="Enter your first name"
+                  value="<%= data.name %>"
+                  required
+                />
+              </div>
+  
+              <div class="form-control w-full">
+                <label class="label" for="first-name">
+                  <span class="label-text font-medium">Product Description</span>
+                </label>
+                <input 
+                  type="text" 
+                  name="description" 
+                  id="first-name" 
+                  autocomplete="given-name" 
+                  class="input input-bordered w-full" 
+                  placeholder="Enter your first name"
+                  value="<%= data.description %>"
+                  required
+                />
+              </div>
+  
+              <!-- <div class="form-control w-full">
+                <label class="label" for="first-name">
+                  <span class="label-text font-medium">Product price</span>
+                </label>
+                <input 
+                  type="number" 
+                  name="price" 
+                  id="first-name" 
+                  autocomplete="given-name" 
+                  class="input input-bordered w-full" 
+                  placeholder="Enter your first name"
+                  required
+                />
+              </div> -->
+  
+              <div class="form-control w-full">
+                <label class="label" for="first-name">
+                  <span class="label-text font-medium">Product Category</span>
+                </label>
+                <input 
+                  type="text" 
+                  name="price" 
+                  id="first-name" 
+                  autocomplete="given-name" 
+                  class="input input-bordered w-full" 
+                  placeholder="Enter your first name"
+                  value="<%= data.category %>"
+                  required
+                />
+              </div>
+  
+  
+              
+              <div class="card-actions justify-end mt-6">
+                <button type="submit" class="btn btn-primary btn-wide">
+                  Submit Information
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+</body>
