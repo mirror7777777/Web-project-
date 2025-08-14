@@ -1,10 +1,25 @@
-const express = require('express');
+const express = require('express')
+
+const app = express();
+const Port = 6700;
+
+;
 require('dotenv').config();
 const path = require('path');
 const mongoose = require('mongoose');
 const Newsletter = require('./models/Newsletter');
 const Product = require('./models/Product');
 const Service = require('./models/Service');
+
+app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.listen(Port, () => {
+  console.log(`Port is open at: http://localhost:${Port}`);
+});
+app.use(express.static('public'));
+
+const DB = "mongodb+srv://Richmond:9DgvyPBtzCLHEit4@cluster0.dbtm5bt.mongodb.net/"
 
 // Seed database with 10 products and 10 services if empty
 async function seedProductsAndServices() {
@@ -40,7 +55,7 @@ async function seedProductsAndServices() {
     console.log('Seeded 10 services');
   }
 }
-seedProductsAndServices();
+//seedProductsAndServices();
 // CRUD API for Service
 // CREATE
 app.post('/services', async (req, res) => {
@@ -92,25 +107,29 @@ app.delete('/services/:id', async (req, res) => {
   }
 });
 
-const app = express();
-const Port = 6700;
-
-// MongoDB connection
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => console.log('MongoDB connected'))
-  .catch((err) => console.error('MongoDB connection error:', err));
-
-app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.listen(Port, () => {
-  console.log(`Port is open at: http://localhost:${Port}`);
+app.get('/products', (req , res)=>{
+  Product.find().exec().then((data) => {
+    
+      res.render('products', {data})
+      console.log(data)
+    
+  }).catch(err=> {
+    console.log(err)
+  })
 });
-app.use(express.static('public'));
+
+//page display for products page
+
 
 // CRUD API for Product
+// READ ALL
+// app.get('/products', async (req, res) => {
+//   const products = await Product.find();
+//   res.render('products')
+//   //res.json(products);
+// });
+
+
 // CREATE
 app.post('/products', async (req, res) => {
   try {
@@ -122,11 +141,7 @@ app.post('/products', async (req, res) => {
   }
 });
 
-// READ ALL
-app.get('/products', async (req, res) => {
-  const products = await Product.find();
-  res.json(products);
-});
+
 
 // READ ONE
 app.get('/products/:id', async (req, res) => {
@@ -242,9 +257,7 @@ app.get('/newsletter', (req , res)=>{
 res.render('newsletter')
 });
 
-app.get('/products', (req , res)=>{
-  res.render('products')
-});
+
 
 app.get('/service', (req , res)=>{
   res.render('services')
@@ -254,3 +267,9 @@ app.get('/lm_lms', (req , res)=>{
   res.render('lm_lms')
 });
 
+// MongoDB connection
+mongoose.connect(process.env.DB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => console.log('MongoDB connected'))
+  .catch((err) => console.error('MongoDB connection error:', err));

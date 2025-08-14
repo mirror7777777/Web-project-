@@ -46,6 +46,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 <!-- Brand Strategy Card -->
+                <% data.forEach(name=>{ %>
                 <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
                   <figure class="px-10 pt-10">
                     <img src="Asseta/lms.jpeg" alt="Brand Strategy" class="rounded-xl h-48 w-full object-cover"/>
@@ -84,9 +85,11 @@
                       </div>
                     </div>
                   </div>
+                  <% }) %>
+                  
         
                   <!-- Visual Identity Card -->
-                  <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
+                  <!-- <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
                     <figure class="px-10 pt-10">
                       <img src="Asseta/cm2.png" alt="Visual Identity" class="rounded-xl h-48 w-full object-cover"/>
                     </figure>
@@ -124,7 +127,7 @@
                         </a>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
           </section>
       </main>
