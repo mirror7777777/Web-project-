@@ -28,6 +28,22 @@
     </div>
 
     <div class="container mx-auto p-6 -mt-20">
+      <% if (typeof success !== 'undefined' && success) { %>
+        <div class="alert alert-success shadow-lg mb-6 max-w-2xl mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Thank you <%= firstName %>! You have successfully subscribed to our newsletter.</span>
+        </div>
+      <% } %>
+      <% if (typeof error !== 'undefined' && error) { %>
+        <div class="alert alert-error shadow-lg mb-6 max-w-2xl mx-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-1.414 1.414M6.343 17.657l-1.414-1.414M6.343 6.343l1.414 1.414M17.657 17.657l1.414-1.414M12 8v4m0 4h.01" />
+          </svg>
+          <span><%= error %></span>
+        </div>
+      <% } %>
       <!-- Main Newsletter Subscription Card -->
       <div class="card w-full max-w-4xl mx-auto bg-base-100 shadow-2xl">
         <div class="card-body">
@@ -100,7 +116,7 @@
               <div class="card-body">
                 <h3 class="card-title text-secondary mb-4">Subscribe Now</h3>
                 
-                <form action="datapage" method="post" class="space-y-4">
+                <form action="/newsletter" method="post" class="space-y-4">
                   <div class="form-control w-full">
                     <label class="label" for="first-name">
                       <span class="label-text font-medium">

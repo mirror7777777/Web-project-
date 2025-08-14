@@ -57,86 +57,46 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          <!-- Brand Strategy Card -->
-          <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
-            <figure class="px-10 pt-10">
-              <img src="Asseta/wireframe.jpg" alt="Brand Strategy" class="rounded-xl h-48 w-full object-cover"/>
-            </figure>
-            <div class="card-body">
-              <div class="flex items-center gap-2 mb-2">
-                <div class="badge badge-primary">Strategy</div>
-                <div class="badge badge-outline">Branding</div>
-              </div>
-              <h3 class="card-title text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-                Brand Strategy
-              </h3>
-              <p class="text-base-content/80 leading-relaxed">
-                Creating a unique brand website to help businesses by integrating brand's core values 
-                is what we do. For us, identity means clarity. Every visual touchpoint, from layouts to 
-                language, is designed to reflect purpose and evoke connection. By grounding identity in
-                authenticity and intuition, we build brands that feel human, memorable, and unmistakably stargaziin brand.
-              </p>
-              <div class="card-actions justify-end mt-4">
-                <div class="rating rating-sm">
-                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" checked />
+          <% if (products && products.length) { %>
+            <% products.forEach(function(product) { %>
+              <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
+                <figure class="px-10 pt-10">
+                  <img src="<%= product.image || 'Asseta/wireframe.jpg' %>" alt="<%= product.name %>" class="rounded-xl h-48 w-full object-cover"/>
+                </figure>
+                <div class="card-body">
+                  <div class="flex items-center gap-2 mb-2">
+                    <div class="badge badge-primary">Product</div>
+                    <div class="badge badge-outline"><%= product.category %></div>
+                  </div>
+                  <h3 class="card-title text-primary"><%= product.name %></h3>
+                  <p class="text-base-content/80 leading-relaxed"><%= product.description %></p>
+                  <div class="card-actions justify-between mt-4">
+                    <span class="font-bold text-lg text-secondary">$<%= product.price %></span>
+                  </div>
                 </div>
-                <button class="btn btn-primary">
-                  Learn More
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </button>
               </div>
-            </div>
-          </div>
-
-          <!-- Visual Identity Card -->
-          <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
-            <figure class="px-10 pt-10">
-              <img src="Asseta/tablet.jpg" alt="Visual Identity" class="rounded-xl h-48 w-full object-cover"/>
-            </figure>
-            <div class="card-body">
-              <div class="flex items-center gap-2 mb-2">
-                <div class="badge badge-secondary">Design</div>
-                <div class="badge badge-outline">Visual</div>
-              </div>
-              <h3 class="card-title text-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-                Visual Identity
-              </h3>
-              <p class="text-base-content/80 leading-relaxed">
-                At stargaziin Creative, our logo design process begins with discovery. 
-                We dive into a brand's history, audience, values, and ambitions to 
-                uncover what makes it unique. From there, we craft visual identities
-                that are simple yet expressive, intentional yet adaptable.
-              </p>
-              <div class="card-actions justify-end mt-4">
-                <div class="rating rating-sm">
-                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+            <% }); %>
+          <% } %>
+          <% if (services && services.length) { %>
+            <% services.forEach(function(service) { %>
+              <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
+                <figure class="px-10 pt-10">
+                  <img src="<%= service.image || 'Asseta/tablet.jpg' %>" alt="<%= service.name %>" class="rounded-xl h-48 w-full object-cover"/>
+                </figure>
+                <div class="card-body">
+                  <div class="flex items-center gap-2 mb-2">
+                    <div class="badge badge-secondary">Service</div>
+                    <div class="badge badge-outline"><%= service.category %></div>
+                  </div>
+                  <h3 class="card-title text-secondary"><%= service.name %></h3>
+                  <p class="text-base-content/80 leading-relaxed"><%= service.description %></p>
+                  <div class="card-actions justify-between mt-4">
+                    <span class="font-bold text-lg text-primary">$<%= service.price %></span>
+                  </div>
                 </div>
-                <button class="btn btn-secondary">
-                  Learn More
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </button>
               </div>
-            </div>
-          </div>
+            <% }); %>
+          <% } %>
         </div>
       </section>
 
