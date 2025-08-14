@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyberpunk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact page</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="min-h-screen bg-base-100">
+    <%- include('partial/header' , { page: '/products'})-%>
+
+    <div class="hero min-h-96 bg-gradient-to-r from-secondary to-accent" style="background-image: url('Asseta/prod2.jpg'); background-blend-mode: overlay;">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+          <div class="max-w-md">
+            <h1 class="mb-5 text-5xl font-bold">Our Product</h1>
+            <p class="mb-5">Deivering quality product that adds value to your workflow</p>
+            <button class="btn btn-primary">Explore</button>
+          </div>
+        </div>
+    </div>
+
+    <div class="flex justify-center mt-8">
+        <div class="stats stats-horizontal shadow">
+          <div class="stat">
+            <div class="stat-title">User Globally</div>
+            <div class="stat-value text-primary">50M</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Countries</div>
+            <div class="stat-value text-secondary">20+</div>
+          </div>
+          <div class="stat">
+            <div class="stat-title">Awards</div>
+            <div class="stat-value text-accent">15+</div>
+          </div>
+        </div>
+      </div>
+    
+      <main class="container mx-auto p-6">
+        <section class="py-16">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold text-primary mb-4">Our Featured Products</h2>
+              <div class="badge badge-secondary badge-lg">Premium Quality</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+              <% if (products && products.length) { %>
+                <% products.slice(0, 5).forEach(function(product) { %>
+                  <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
+                    <figure class="px-10 pt-10">
+                      <img src="<%= product.image || 'Asseta/wireframe.jpg' %>" alt="<%= product.name %>" class="rounded-xl h-48 w-full object-cover"/>
+                    </figure>
+                    <div class="card-body">
+                      <div class="flex items-center gap-2 mb-2">
+                        <div class="badge badge-primary">Product</div>
+                        <div class="badge badge-outline"><%= product.category %></div>
+                      </div>
+                      <h3 class="card-title text-primary"><%= product.name %></h3>
+                      <p class="text-base-content/80 leading-relaxed"><%= product.description %></p>
+                      <div class="card-actions justify-between mt-4">
+                        <span class="font-bold text-lg text-secondary">$<%= product.price %></span>
+                      </div>
+                    </div>
+                  </div>
+                <% }); %>
+              <% } else { %>
+                <div class="col-span-2 text-center text-error">No products found.</div>
+              <% } %>
+          </section>
+      </main>
+      <%- include('partial/footer' , { page: '/products'})-%>
+
+</body>    
+</html>

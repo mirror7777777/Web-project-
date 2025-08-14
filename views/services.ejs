@@ -58,7 +58,7 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           <% if (products && products.length) { %>
-            <% products.forEach(function(product) { %>
+            <% products.slice(0, 5).forEach(function(product) { %>
               <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
                 <figure class="px-10 pt-10">
                   <img src="<%= product.image || 'Asseta/wireframe.jpg' %>" alt="<%= product.name %>" class="rounded-xl h-48 w-full object-cover"/>
@@ -78,7 +78,7 @@
             <% }); %>
           <% } %>
           <% if (services && services.length) { %>
-            <% services.forEach(function(service) { %>
+            <% services.slice(0, 5).forEach(function(service) { %>
               <div class="card bg-base-100 shadow-2xl hover:shadow-3xl transition-all duration-300">
                 <figure class="px-10 pt-10">
                   <img src="<%= service.image || 'Asseta/tablet.jpg' %>" alt="<%= service.name %>" class="rounded-xl h-48 w-full object-cover"/>
