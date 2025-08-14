@@ -118,6 +118,50 @@ app.get('/products', (req , res)=>{
   })
 });
 
+
+// app.post("/addName", (req, res) => {
+
+//   const newName = new Name({
+//       lName: req.body.lName,
+//       fName: req.body.fName
+//   })
+
+//   newName.save().then(() => {
+//       console.log("successfully created a new name")
+//       res.redirect("/")
+//   })
+// })
+
+app.post('/addProduct', (req, res) => {
+  const product = new Product({
+    name: req.body.name,
+    description: req.body.description,
+    price: Math.floor(Math.random() * 100) + 10,
+    category: req.body.category,
+    image: "",
+  })
+
+  product.save().then(() => {
+    console.log("successfully created a new name")
+    res.redirect("/products")
+  })
+  console.log(product)
+})
+
+// app.post('/addProduct', async (req, res) => {
+//   try {
+//     // const product = new Product(req.body);
+//     const product = new Product({
+//       name: req.body.name
+//     })
+//     req.body.name
+//     console.log(product)
+//     //await product.save();
+//     //res.status(201).json(product);
+//   } catch (err) {
+//     res.status(400).json({ error: err.message });
+//   }
+// });
 //page display for products page
 
 
@@ -131,15 +175,7 @@ app.get('/products', (req , res)=>{
 
 
 // CREATE
-app.post('/products', async (req, res) => {
-  try {
-    const product = new Product(req.body);
-    await product.save();
-    res.status(201).json(product);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
+
 
 
 
