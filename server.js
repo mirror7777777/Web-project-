@@ -55,57 +55,8 @@ async function seedProductsAndServices() {
     console.log('Seeded 10 services');
   }
 }
-//seedProductsAndServices();
-// CRUD API for Service
-// CREATE
-app.post('/services', async (req, res) => {
-  try {
-    const service = new Service(req.body);
-    await service.save();
-    res.status(201).json(service);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
 
-// READ ALL
-app.get('/services', async (req, res) => {
-  const services = await Service.find();
-  res.json(services);
-});
-
-// READ ONE
-app.get('/services/:id', async (req, res) => {
-  try {
-    const service = await Service.findById(req.params.id);
-    if (!service) return res.status(404).json({ error: 'Not found' });
-    res.json(service);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
-
-// UPDATE
-app.put('/services/:id', async (req, res) => {
-  try {
-    const service = await Service.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!service) return res.status(404).json({ error: 'Not found' });
-    res.json(service);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
-
-// DELETE
-app.delete('/services/:id', async (req, res) => {
-  try {
-    const service = await Service.findByIdAndDelete(req.params.id);
-    if (!service) return res.status(404).json({ error: 'Not found' });
-    res.json({ message: 'Deleted' });
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
+seedProductsAndServices();
 
 
 //Products
