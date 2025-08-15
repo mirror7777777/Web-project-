@@ -160,6 +160,17 @@ app.post("/updProduct", (req, res) => {
 
 })
 
+//delete Products
+app.post("/delProd", (req, res) => {
+  Product.deleteOne({_id: req.query.id}).exec().then(() => {
+    console.log("successfully deleted!")
+    res.redirect("/products")
+}).catch((err) => {
+  console.log(err);
+});
+
+
+})
 
 
 

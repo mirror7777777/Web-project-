@@ -165,12 +165,13 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                           </svg>
                         </a>
-                        <a role="button" class="btn btn-accent" href="/updProd?id=<%= product._id %>">
-                          Delete
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                          </svg>
-                        </a>
+                        <form method="post" action="/delProd?id=<%= product._id %>">
+                          <button type="submit" class="btn btn-accent btn-wide">
+                            Delete
+                            
+                          </button>
+                        </form>
+                        
                       </div>
                     </div>
                   </div>
